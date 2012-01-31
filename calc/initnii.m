@@ -93,6 +93,6 @@ function button_combinesegment_Callback(hObject, eventdata, handles)
 % hObject    handle to button_combinesegment (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-headdata = BulkImportNII(handles.path);
+headdata = ImportSegmentedT1(handles.path);
 uisave('headdata','tt_headdata.mat');
 close
