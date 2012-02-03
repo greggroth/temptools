@@ -11,3 +11,6 @@ Ensure that the entire directory and subdirectories have been added to the Matla
     temptools
 
 at the command prompt.
+
+Copyright 2012 Greggory Rothmeier
+This software is available under the terms of the [GNU General Public License](http://www.gnu.org/licenses/gpl.html)
