@@ -57,12 +57,18 @@ function tsliceplot_OpeningFcn(hObject, eventdata, handles, varargin)
 % Choose default command line output for tsliceplot
 handles.output = hObject;
 
-if length(varargin) ~= 2
-    error('myApp:argChk','The function cannot handle more or less than 2 inputs.  See the help documentation for more information about inputs.')
+switch length(varargin)
+    case 1
+        handles.temp = varargin{1};
+        handles.equil = zeros(1,size(varargin{1},2),size(varargin{1},3),size(varargin{1},4));
+    case 2
+        handles.temp = varargin{1};
+        handles.equil = varargin{2};
+    otherwise
+        error('myApp:argChk','The function can only handle 1 or 2 inputs.  See the help documentation for more information about inputs.')
 end
 
-handles.temp = varargin{1};
-handles.equil = varargin{2};
+
 
 switch ndims(handles.equil)
     case 3
@@ -387,7 +393,7 @@ switch sender
             set(handles.zd,'Enable','on');
         end
     otherwise
-        error('this should never happen');
+        error('this should never happen.  hmm.  but it did, didn''t it.  well this is awkward.');
 end
 guidata(hObject, handles);
 plotit(hObject, handles)
